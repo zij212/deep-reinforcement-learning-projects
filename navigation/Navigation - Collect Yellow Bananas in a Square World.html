@@ -14950,6 +14950,21 @@ Environment solved in 408 episodes, Average Score 13.01
 
 </div>
 
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h1 id="Improvements">Improvements<a class="anchor-link" href="#Improvements">&#182;</a></h1><p>I noticed that when the agent's visual field is filled with blue bananas, it would shift quickly between the turn left and turn right actions, and ends up being stuck in one spot. The agent needs to learn how to break the fixation of state. Collecting a few blue banana in exchange for a different state is much better than getting stuck and collectiong nothing!</p>
+<p>I also want to try out the following techniques,</p>
+<ul>
+<li><strong>prioritized experience replay</strong> (to sample experience with probability proportional to the TD-error)</li>
+<li><strong>double DQNs</strong> (to avoid over-estimate action value early on)<ul>
+<li>when calculating the TD target, instead of using $\max_aQ_{target}(S_{t+1}, a \in A(S_{t+1}); \theta')$, use $Q_{target}(S_{t+1}, a=\arg\max_aQ_{pred}(S_{t+1}, a \in A(S_{t+1}); \theta); \theta')$</li>
+</ul>
+</li>
+<li>and <strong>dueling network</strong> (to separaet action value function into state value and advantage value) </li>
+</ul>
+
+</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
