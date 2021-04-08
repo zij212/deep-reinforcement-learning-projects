@@ -37,6 +37,19 @@ The environment is considered solved, when the average (over 100 episodes) of th
 
 2. Place the file in the DRLND GitHub repository, in the `p3_collab-compet/` folder, and unzip (or decompress) the file. 
 
+### Environment
+
+| Field | Value |
+|-|-|
+| Number of agents | 2 |
+| Each agent's state space | 24 |
+| Each agent's action space | 2 |
+| Action range | [-1, 1] |
+
+In an episode, we sum each agent's rewards seperately, and take the max of two total rewards as the episode score.
+
+The environment is considered solved if the last 100 episode's average score is larger than 0.5
+
 ### Instructions
 
 Follow the instructions in `Tennis.ipynb` to get started with training your own agent!  
